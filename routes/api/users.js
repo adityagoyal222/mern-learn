@@ -64,8 +64,8 @@ router.post('/', [
             jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 360000 },
             (err, token) => {
                 if(err) throw err;
-                res.json({ token });
-                console.log(token);
+                console.log(token)
+                return res.json({ token });
             });
 
             res.send('User registered')
